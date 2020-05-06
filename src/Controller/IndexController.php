@@ -12,6 +12,10 @@ class IndexController extends AbstractController
      */
     public function index()
     {
+
+        $this->denyAccessUnlessGranted('view', 'mySubject');
+
+
         return $this->render('index/index.html.twig', [
             'controller_name' => 'IndexController',
         ]);
